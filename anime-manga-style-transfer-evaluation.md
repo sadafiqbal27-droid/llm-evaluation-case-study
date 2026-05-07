@@ -1,74 +1,106 @@
-# Anime / Manga Style Transfer Evaluation Case Study
+# Manga Style Transfer Evaluation Case Study
 
 ## Task Type
-Multimodal AI Evaluation – Image Style Transfer
+Multimodal AI Evaluation – Manga Style Image Transformation
 
-## Prompt
-Convert the given reference image into an anime/manga style while preserving the main subject’s identity, pose, composition, and key visual details.
+## Task Overview
+In this task, an input image was already provided, and the model was instructed to convert the original image into a manga-style illustration while preserving the subject’s identity, pose, composition, and important visual details.
 
-## Evaluation Context
-In this task, the input image was already provided, and the model was expected to transform it into an anime or manga-style output. The goal was not to create a completely new character, but to preserve the original image’s coarse likeness while applying a clear anime/manga visual style.
+The evaluation focused on whether the generated output successfully fulfilled the prompt request, maintained consistency with the original image, preserved visual quality, and avoided common AI-generated artifacts.
 
-## Common Model Failures Observed
+---
 
-### 1. Incomplete Anime/Manga Style Transfer
-The model sometimes only partially applied the anime/manga style. Some parts of the image looked stylized, while others remained too realistic or photo-like.
+# Evaluation Axes
 
-Examples of issues:
-- Eyes not enlarged or stylized enough
-- Hair lacking anime-style shape, texture, or highlights
-- Face retaining too much realism
-- Clothing or background not matching the manga/anime aesthetic
-- Weak linework or missing illustrated outlines
-
-## Evaluation Axis: IC – Instruction Compliance
+## 1. Instruction Following
 
 ### Assessment
-The output partially follows the prompt because it attempts a style conversion, but it does not fully satisfy the anime/manga transformation requirement.
+This axis evaluates whether the model successfully fulfilled the user’s request to transform the original image into a manga-style illustration.
 
-### Issues Marked Under IC
-- The requested anime/manga style is applied inconsistently
-- Key visual elements remain too realistic
-- The transformation does not fully match the user’s requested style
-- Coarse likeness may change when facial structure, hairstyle, pose, or expression is altered too much
-
-### IC Judgment
-Partial compliance. The model understands the requested transformation but fails to apply it fully and consistently.
-
-## Evaluation Axis: AIQ – Aesthetic / Image Quality
-
-### Assessment
-The image may look visually acceptable at first glance, but quality issues reduce the final output’s effectiveness.
-
-### Issues Marked Under AIQ
-- Warped or uneven facial features
-- Incorrect or unnatural eyes
-- Hair texture not clean or stylized
-- Poor line quality
-- Inconsistent shading
-- Background and subject style mismatch
-- Loss of visual polish
-- Artifacts around face, hair, hands, or clothing
-
-### AIQ Judgment
-Moderate quality. The image may be usable, but visible style inconsistencies and artifacts prevent it from being a strong anime/manga transformation.
-
-## Coarse Likeness Evaluation
-
-### Assessment
-The model should preserve the subject’s general identity and structure while changing the artistic style.
-
-### Possible Issues
-- Face shape changes too much
-- Hair length, color, or structure changes incorrectly
-- Pose or body structure is altered
-- Expression changes significantly
-- Important accessories or clothing details are removed or changed
+### Common Issues
+- Manga style not fully applied
+- Some areas remain overly realistic
+- Weak manga-style linework
+- Inconsistent stylization across the image
+- Background does not match manga aesthetics
+- Prompt request only partially fulfilled
 
 ### Judgment
-If the subject is no longer clearly recognizable from the original image, this should be marked as a failure under instruction compliance and likeness preservation.
+If the generated image fails to fully transform the image into the requested manga style, it is marked as an Instruction Following issue.
+
+---
+
+## 2. Original Image Consistency
+
+### Assessment
+This axis evaluates whether the generated image remains consistent with the original input image while applying the manga transformation.
+
+### Common Issues
+- Coarse likeness changes
+- Face shape altered significantly
+- Hairstyle or hair color changed incorrectly
+- Pose modified unintentionally
+- Facial expression inconsistent with original image
+- Important accessories or clothing details removed
+- Subject no longer clearly recognizable
+
+### Judgment
+If the subject’s original identity or major visual structure changes significantly, it is marked as an Original Image Consistency failure.
+
+---
+
+## 3. Quality Issues
+
+### Assessment
+This axis evaluates the general visual quality and polish of the generated image.
+
+### Common Issues
+- Blending inconsistencies
+- Blurriness
+- Grainy texture
+- Noise in facial or background regions
+- Weak edge detailing
+- Inconsistent shading
+- Low image clarity
+- Background quality mismatch
+
+### Judgment
+If the image contains noticeable rendering or visual quality problems that reduce the overall output quality, it is marked as a Quality Issue.
+
+---
+
+## 4. AI Artifacts
+
+### Assessment
+This axis evaluates common AI-generated visual artifacts and anatomical failures.
+
+### Common Issues
+- Warped fingers
+- Distorted anatomy
+- Unnatural teeth
+- Flat or lifeless eye pupils
+- Duplication artifacts
+- Extra fingers or limbs
+- Facial asymmetry
+- Warped accessories or objects
+- Deformed hands or facial features
+
+### Judgment
+If visible AI-generated artifacts reduce realism, structure, or visual consistency, they are marked under AI Artifacts.
+
+---
+
+# Overall Evaluation
+
+## Assessment
+The final evaluation is based on:
+- Instruction Following
+- Original Image Consistency
+- Quality Issues
+- AI Artifacts
+- Overall user intent fulfillment and viewing experience
 
 ## Overall Conclusion
-The output is partially successful but not fully aligned with the prompt. While the model attempts to create an anime/manga-style version of the original image, the transformation is incomplete and inconsistent. The main issues are weak anime styling, possible loss of coarse likeness, and image-quality problems such as unnatural eyes, poor hair rendering, or inconsistent linework.
+A successful output should fully transform the original image into a consistent manga-style illustration while preserving the subject’s identity and maintaining high visual quality.
 
-A stronger output would preserve the subject’s key identity and composition while applying a complete anime/manga style across the face, hair, clothing, and background.
+Outputs that fail to fully apply the manga style, significantly alter the original subject, contain visual quality problems, or show noticeable AI artifacts are considered partially successful or unsuccessful depending on severity.
