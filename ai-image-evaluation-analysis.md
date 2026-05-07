@@ -1,4 +1,4 @@
-# Example 1: Image Evaluation Analysis
+#Image Evaluation Analysis
 
 ## Prompt
 
