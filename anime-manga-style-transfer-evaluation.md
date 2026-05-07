@@ -1,5 +1,4 @@
-# Manga Style Transfer Evaluation Case Study
-
+# Failure Modes in Anime/Manga Style Transfer for Multimodal Generative Models
 ## Task Type
 Multimodal AI Evaluation – Manga Style Image Transformation
 
