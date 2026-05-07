@@ -14,7 +14,7 @@ After submitting the prompt, the model generates 10 images.
 
 ## Step 2: Sweet Spot Selection
 
-I review all 8 images and check whether at least one image has a useful balance:
+I review all 10 images and check whether at least one image has a useful balance:
 
 - It follows the prompt reasonably well
 - It contains 2–3 visible AI issues
@@ -81,19 +81,19 @@ Images with similar types of errors are grouped together before ranking.
 
 Each image is evaluated across four main axes:
 
-### 1. Instruction Following
+### 1. Prompt Adherence
 
 How strongly the image fulfills the original prompt requirements.
 
-### 2. Image Consistency
+### 2. Source Image Preservation
 
 If an original image or reference was used, I check what changed in the generated version and whether important elements were preserved.
 
-### 3. AI Issues
+### 3. AI Artifact Detection
 
 I identify visible AI-generated defects such as distortions, hallucinated objects, unnatural anatomy, or inconsistent details.
 
-### 4. Quality Issues
+### 4. Visual & Rendering Quality
 
 I assess overall visual quality, including sharpness, realism, composition, lighting, and clarity.
 
