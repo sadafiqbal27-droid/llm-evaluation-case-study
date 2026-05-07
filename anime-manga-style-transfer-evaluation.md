@@ -48,7 +48,7 @@ If the subject’s original identity or major visual structure changes significa
 
 ---
 
-## 4. Visual & Rendering Quality
+## 3. Visual & Rendering Quality
 
 ### Assessment
 This axis evaluates the general visual quality and polish of the generated image.
@@ -68,7 +68,7 @@ If the image contains noticeable rendering or visual quality problems that reduc
 
 ---
 
-## 3. AI Artifact Detection
+## 4. AI Artifact Detection
 
 ### Assessment
 This axis evaluates common AI-generated visual artifacts and anatomical failures.
