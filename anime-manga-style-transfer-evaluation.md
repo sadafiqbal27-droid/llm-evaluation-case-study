@@ -93,10 +93,10 @@ If visible AI-generated artifacts reduce realism, structure, or visual consisten
 
 ## Assessment
 The final evaluation is based on:
-- Instruction Following
-- Original Image Consistency
-- Quality Issues
-- AI Artifacts
+- Prompt Adherence
+- Source Image Preservation
+- Visual & Rendering Quality
+- AI Artifacts Detection
 - Overall user intent fulfillment and viewing experience
 
 ## Overall Conclusion
