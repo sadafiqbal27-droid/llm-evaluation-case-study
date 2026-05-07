@@ -11,7 +11,7 @@ The evaluation focused on whether the generated output successfully fulfilled th
 
 # Evaluation Axes
 
-## 1. Instruction Following
+## 1. Prompt Adherence
 
 ### Assessment
 This axis evaluates whether the model successfully fulfilled the user’s request to transform the original image into a manga-style illustration.
@@ -29,7 +29,7 @@ If the generated image fails to fully transform the image into the requested man
 
 ---
 
-## 2. Original Image Consistency
+## 2. Source Image Preservation
 
 ### Assessment
 This axis evaluates whether the generated image remains consistent with the original input image while applying the manga transformation.
@@ -48,7 +48,7 @@ If the subject’s original identity or major visual structure changes significa
 
 ---
 
-## 3. Quality Issues
+## 4. Visual & Rendering Quality
 
 ### Assessment
 This axis evaluates the general visual quality and polish of the generated image.
@@ -68,7 +68,7 @@ If the image contains noticeable rendering or visual quality problems that reduc
 
 ---
 
-## 4. AI Artifacts
+## 3. AI Artifact Detection
 
 ### Assessment
 This axis evaluates common AI-generated visual artifacts and anatomical failures.
