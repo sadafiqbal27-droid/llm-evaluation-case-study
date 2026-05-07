@@ -15,7 +15,7 @@ Change the weather in the given running competition image from a sunny day to he
 
 # Evaluation Axes
 
-## 1. Instruction Following
+## 1. Prompt Adherence
 
 ### Assessment
 This axis checks whether the model fulfilled the user’s main request: changing the scene from sunny weather to heavy rain.
@@ -33,7 +33,7 @@ If the image still looks sunny or only lightly edited, the prompt request is not
 
 ---
 
-## 2. Original Image Consistency
+## 2. Source Image Preservation
 
 ### Assessment
 This axis checks whether the edited image keeps the original scene consistent while applying the requested weather change.
@@ -60,7 +60,7 @@ Minor expression changes caused by the rainy weather should be accepted. Major i
 
 ---
 
-## 3. Quality Issues
+## 3. Visual & Rendering Quality
 
 ### Assessment
 This axis evaluates the general visual quality of the edited image.
@@ -81,7 +81,7 @@ If the rain effect, lighting, clothing, or environment looks poorly blended or v
 
 ---
 
-## 4. AI Artifacts
+## 4. AI Artifact Detection
 
 ### Assessment
 This axis evaluates common AI-generated errors introduced during editing.
