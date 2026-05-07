@@ -10,7 +10,7 @@ The goal is not to generate a perfect image immediately. The goal is to create a
 
 I begin by writing an image-generation prompt with enough detail to guide the model, but not so much complexity that all outputs fail.
 
-After submitting the prompt, the model generates 8 images.
+After submitting the prompt, the model generates 10 images.
 
 ## Step 2: Sweet Spot Selection
 
