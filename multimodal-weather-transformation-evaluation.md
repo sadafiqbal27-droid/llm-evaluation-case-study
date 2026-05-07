@@ -4,19 +4,12 @@
 Multimodal AI Evaluation – Image Editing / Weather Transformation
 
 ## Task Overview
-In this task, the original image shows people running in a competition on a sunny day. The prompt asks the model to edit the same image and transform the weather into heavy rain.
+In this task, the original image shows people running in a competition on a sunny day. The prompt asks the model to edit the image and transform the weather into heavy rain while keeping the main scene, people, race setting, and overall composition consistent.
 
-The goal is not to create a completely new image, but to keep the original scene, runners, race setting, and composition while changing the weather condition from sunny to heavy rain in a realistic and consistent way.
+The evaluation focuses on whether the model successfully changes the weather condition while maintaining visual realism and respecting the user’s intent.
 
 ## Prompt
-Edit the given image of people running in a running competition and change the weather from a sunny day to heavy rain.
-
-## Key Evaluation Point
-When the prompt asks for a weather change, some visual changes are expected and should not automatically be penalized as inconsistency with the original image.
-
-For example, facial expressions may naturally change in heavy rain. Runners may look more strained, uncomfortable, focused, or affected by the weather. This should not be marked as an Original Image Consistency issue if the expression change supports the requested weather transformation.
-
-However, if the model keeps sunny-day expressions, lighting, shadows, and dry clothing while adding only light or artificial-looking rain, then the output may fail the user intent.
+Change the weather in the given running competition image from a sunny day to heavy rain.
 
 ---
 
@@ -25,130 +18,113 @@ However, if the model keeps sunny-day expressions, lighting, shadows, and dry cl
 ## 1. Instruction Following
 
 ### Assessment
-This axis evaluates whether the model successfully followed the user’s request to change the sunny running competition image into a heavy-rain scene.
+This axis checks whether the model fulfilled the user’s main request: changing the scene from sunny weather to heavy rain.
 
 ### Common Issues
-- Rain is missing or too subtle
-- Weather looks like light drizzle instead of heavy rain
-- Scene still appears sunny
-- Bright sunlight remains visible
-- Strong sunny shadows are still present
-- Runners and ground still appear dry
-- The image does not clearly communicate heavy rain
+- Rain is missing or too weak
+- Rain does not look heavy enough
+- Sunny lighting remains unchanged
+- Shadows from the sunny scene are still visible
+- Sky, ground, and atmosphere do not reflect rainy weather
+- Clothes and surroundings do not appear affected by rain
 
 ### Judgment
-If the output does not convincingly transform the scene into heavy rain, it should be marked as an Instruction Following issue.
+If the image still looks sunny or only lightly edited, the prompt request is not fully fulfilled and should be penalized under Instruction Following.
 
 ---
 
 ## 2. Original Image Consistency
 
 ### Assessment
-This axis evaluates whether the edited image preserves the main elements of the original image while applying the requested weather change.
+This axis checks whether the edited image keeps the original scene consistent while applying the requested weather change.
 
-### What Should Be Preserved
-- Same runners
-- Same race setting
-- Same composition
-- Same general body positions
-- Same competition context
-- Same major clothing items and layout
-
-### Acceptable Changes
-Some changes are acceptable because they are required by the prompt:
-- Facial expressions may look more tense or uncomfortable due to rain
-- Clothing may look darker or wet
-- Hair may appear damp
-- Ground may look reflective or wet
-- Lighting may become darker or softer
-- Sunny shadows may disappear
+The runners, race setting, body positions, composition, and major visual elements should remain consistent with the original image.
 
 ### Common Issues
-- Runner identity changes too much
-- Body pose changes unnecessarily
-- People are added or removed
-- Clothing design changes without reason
-- Race environment changes completely
-- Composition no longer matches the original image
+- Runners are removed or added unnecessarily
+- Body positions change without reason
+- Race setting or background changes too much
+- Clothing design changes unnecessarily
+- Main subjects become unrecognizable
+- Scene composition changes beyond the requested weather edit
 
-### Important Note
-Expression changes caused by the weather transformation should not be penalized under Original Image Consistency if they are reasonable and support the heavy-rain request.
+### Important Note on Facial Expressions
+Facial expressions may naturally change when the prompt asks for a heavy rain transformation. For example, runners may look more strained, focused, uncomfortable, or reactive because of the rain.
+
+This should not be penalized under Original Image Consistency if the expression change supports the requested weather edit.
+
+However, if the facial expression changes too much and makes the person unrecognizable, then it can be considered an Original Image Consistency issue.
+
+### Judgment
+Minor expression changes caused by the rainy weather should be accepted. Major identity, pose, composition, or scene changes should be penalized under Original Image Consistency.
 
 ---
 
 ## 3. Quality Issues
 
 ### Assessment
-This axis evaluates the general visual quality and realism of the edited image.
+This axis evaluates the general visual quality of the edited image.
 
 ### Common Issues
-- Rain looks pasted on or artificial
-- Rain direction is inconsistent
-- Rain intensity is uneven
-- Blending between rain and subjects is poor
-- Image becomes blurry or grainy
-- Noise appears in the background
-- Wet surfaces are not rendered naturally
-- Clothing color changes look unrealistic
-- Lighting does not match rainy weather
-- Shadows remain too harsh for a rainy scene
+- Blurriness
+- Grainy texture
+- Noise
+- Poor blending between rain and subjects
+- Rain appears pasted on instead of naturally integrated
+- Wet surfaces do not blend with the environment
+- Lighting looks inconsistent
+- Clothing colors do not reflect rainy conditions
+- Background and foreground have mismatched quality
 
 ### Judgment
-If the rain effect is poorly blended, unrealistic, blurry, noisy, or visually inconsistent, it should be marked as a Quality Issue.
+If the rain effect, lighting, clothing, or environment looks poorly blended or visually low-quality, it should be penalized under Quality Issues.
 
 ---
 
 ## 4. AI Artifacts
 
 ### Assessment
-This axis evaluates AI-generated distortions or unnatural visual failures introduced during the edit.
+This axis evaluates common AI-generated errors introduced during editing.
 
 ### Common Issues
-- Warped hands or fingers
-- Distorted faces
-- Unnatural teeth
-- Flat or lifeless eyes
+- Warped hands, arms, legs, or faces
+- Distorted running posture
 - Duplicated body parts
-- Extra limbs
-- Deformed shoes or legs
-- Broken race bibs or numbers
-- Strange water streaks on faces
-- Rain lines cutting unnaturally through bodies
-- Clothing folds turning into artifacts
+- Unnatural teeth or eyes
+- Flat or lifeless eye pupils
+- Broken clothing details
+- Deformed shoes or race bibs
+- Unrealistic rain patterns
+- Rain drops appearing inside faces, eyes, or bodies
+- Shadows disappearing incorrectly or remaining in unrealistic places
+
+### Important Note on Expression and Weather
+If the prompt asks for heavy rain, some change in facial expression is expected and should not automatically be treated as inconsistency.
+
+But if the model fails to adjust expressions at all and the runners still look relaxed, dry, or unaffected by heavy rain, this can be penalized under AI Artifacts or overall realism because the emotional and physical reaction does not match the edited weather condition.
 
 ### Judgment
-If the edited image introduces visible AI-generated distortions, they should be marked under AI Artifacts.
-
----
-
-# Special Evaluation Note: Facial Expression and Weather Context
-
-In a weather transformation task, facial expression should be evaluated in context.
-
-If the prompt asks for heavy rain, it is natural for runners’ expressions to change slightly. They may appear more strained, uncomfortable, serious, or focused. This supports the requested edit and should not be penalized as inconsistency with the original image.
-
-However, if the expression remains too calm, bright, cheerful, or unchanged from the sunny-day image, the output may fail to reflect the heavy-rain environment. In that case, the issue can be mentioned under AI Artifacts or Overall Evaluation, depending on severity.
-
-A note can be added in the conclusion to explain that the expression was expected to change because of the requested weather transformation.
+AI artifacts should be marked when the edit introduces unnatural anatomy, unrealistic facial features, duplicated elements, or rain effects that do not physically interact with the scene.
 
 ---
 
 # Overall Evaluation
 
 ## Assessment
-The final judgment should consider:
-- Whether the sunny scene was clearly changed to heavy rain
-- Whether the original runners and race setting were preserved
-- Whether rain, lighting, shadows, clothing, and ground effects look realistic
-- Whether the image contains quality issues or AI artifacts
-- Whether the output satisfies the user’s intent
+The final conclusion should consider:
+- Whether the prompt request was fulfilled
+- Whether the original image remained consistent
+- Whether the rainy weather was visually realistic
+- Whether quality issues affected the output
+- Whether AI artifacts reduced believability
+- Whether the final image matched user intent
 
 ## Overall Conclusion
-A successful output should convincingly transform the original sunny running competition image into a heavy-rain scene while preserving the main subjects, race context, and composition.
+A successful output should transform the sunny running competition into a believable heavy rain scene while preserving the main subjects, race setting, and composition.
 
-The model should adjust the environment naturally: shadows should soften or disappear, clothing may look darker or wet, the ground may become reflective, and facial expressions may reasonably change to match the rainy condition.
+The rain should look natural, shadows should change appropriately, clothing should appear affected by wet weather, and the runners’ expressions may reasonably change to reflect the rainy conditions.
 
-If the model only adds superficial rain while keeping sunny lighting, dry clothing, strong shadows, or unchanged expressions, the output should be considered partially successful or unsuccessful depending on severity.
+If the output keeps sunny lighting, unrealistic shadows, dry clothing, weak rain effects, or unchanged relaxed expressions, the weather transformation is incomplete. If the image also contains warped anatomy, unnatural faces, poor blending, or duplicated elements, these should be clearly marked under the relevant axis.
 
-## Example Reviewer Note
-Although the runners’ facial expressions changed from the original image, this should not be penalized under Original Image Consistency because the prompt specifically requested a heavy-rain transformation. The expression change is contextually appropriate. If expressions remain unchanged and do not reflect the rainy condition, this can be noted under AI Artifacts or Overall Evaluation because it weakens the realism and user intent fulfillment.
+## Conclusion Note Example
+The output is penalized under AI Artifacts because the runners’ facial expressions and body reactions do not match the requested heavy rain condition. In a realistic rainy competition scene, runners would appear more focused, strained, or affected by the weather. Since the expressions remain unchanged and the subjects look unaffected by rain, the edit does not fully support the user’s intent.
