@@ -1,5 +1,4 @@
 # Multimodal AI Evaluation: Weather Transformation & Scene Realism Failure Analysis
-# Weather Editing Evaluation Case Study – Running Competition Image
 
 ## Task Type
 Multimodal AI Evaluation – Image Editing / Weather Transformation
