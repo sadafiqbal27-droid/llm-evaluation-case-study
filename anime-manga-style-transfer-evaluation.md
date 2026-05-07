@@ -1,4 +1,4 @@
-# Failure Modes in Anime/Manga Style Transfer for Multimodal Generative Models
+# Failure Modes in Manga Style Transfer for Multimodal Generative Models
 ## Task Type
 Multimodal AI Evaluation – Manga Style Image Transformation
 
